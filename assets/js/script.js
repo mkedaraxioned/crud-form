@@ -126,11 +126,8 @@ function rowEditSubmit() {
     }
     selectedRow.cells[3].innerHTML = document.getElementById("address").value ;
 }
-// let table1= document.getElementByTagName(table)[0];
-// table1.insertRow
 
 function rowDelete(cell) {
-    // selectedRow = cell.parentElement.parentElement;
     if (confirm('Delete this person')) {
         row = cell.parentElement.parentElement;
         document.getElementById("tbody").deleteRow(cell.rowIndex);
