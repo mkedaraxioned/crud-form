@@ -4,6 +4,11 @@
 let firstname,lastname,address,male,female,terms;
 const form = document.getElementById('personinfo');
 form.addEventListener('submit', validateForm);
+const resetbtn=document.getElementById('resetbtn');
+resetbtn.addEventListener('click',() =>{
+    clearForm();
+    selectedRow=null;
+});
 let person = {};
 let selectedRow=null;
 function validateForm(event) {
@@ -125,6 +130,7 @@ function rowEditSubmit() {
         selectedRow.cells[2].innerHTML = document.getElementById("female").value = checked;
     }
     selectedRow.cells[3].innerHTML = document.getElementById("address").value ;
+    selectedRow = 1;
 }
 
 function rowDelete(cell) {
