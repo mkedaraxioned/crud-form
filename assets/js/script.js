@@ -103,14 +103,14 @@ function rowEdit(cell) {
     document.getElementById("firstname").value = selectedRow.cells[0].innerHTML;
     document.getElementById("lastname").value = selectedRow.cells[1].innerHTML;
     document.getElementById("address").value = selectedRow.cells[3].innerHTML;    
-    if(selectedRow.cells[2]==='Male'){
-        document.getElementById("male").value = checked;
+    if(selectedRow.cells[2].innerHTML==="Male"){
+        document.getElementById("male").checked = true;
     }
-    else if(selectedRow.cells[2]==='Female')
+    else if(selectedRow.cells[2].innerHTML==="Female")
     {
-        document.getElementById("female").value = checked;
+        document.getElementById("female").checked = true;
     }
-
+    document.getElementById("terms").checked = true;
 }
 
 
