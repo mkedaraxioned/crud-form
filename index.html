@@ -53,6 +53,77 @@
     <!--main section start-->
     <main>
 
+      <div class="section1">
+        <div class="wrapper">
+          <form onsubmit="event.preventDefault();validateForm();">
+          <div>
+            <label for="firstname">First Name:</label>
+            <input type="text" name="firstname" id="firstname">
+            <span class="firstname-error">Firstname error here</span>
+          </div>
+          <div>
+            <label for="lastname">Last Name:</label>
+            <input type="text" name="lastname" id="lastname">
+            <span class="lastname-error">Lastname error here</span>
+          </div>
+          <div>
+            <label for="gender">Gender:</label>
+            <input type="radio" name="gender" id="male" value="Male">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="female" value="Female">
+            <label for="female">Female</label>
+
+          </div>
+          <div>
+            <label for="address">Address</label>
+            <textarea name="address" id="address" name="address" cols="30" rows="10"></textarea>
+          </div>
+          <div>
+            <input type="checkbox" name="terms" id="terms">
+            <label for="terms">Terms and Conditions</label>
+          </div>
+          <div>
+            <input type="submit" value="Submit" name="submit">
+            <input type="reset" value="Cancel">
+          </div>
+        </form>
+
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Name
+                </th>
+                <th>
+                  Last Name
+                </th>
+                <th>
+                  Gender
+                </th>
+                <th>
+                  Gender
+                </th>
+                <th>
+                  Address
+                </th>
+                <th>
+                  Edit
+                </th>
+                <th>
+                  Delete
+                </th>
+              </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+          </table>
+        </div>
+
+        </div>
+      </div>
+
     </main>
     <!--main section end-->
 
@@ -65,7 +136,7 @@
   </div>
   <!--container end-->
 
-<!-- <script src="js/vendors/jquery-1.8.3.min.js"></script>
-<script src="js/script.js"></script> -->
+<!-- <script src="js/vendors/jquery-1.8.3.min.js"></script> -->
+<script src="js/script.js"></script>
 </body>
 </html>
