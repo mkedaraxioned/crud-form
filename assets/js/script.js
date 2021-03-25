@@ -5,8 +5,13 @@ let firstname,lastname,address,male,female,terms;
 const form = document.getElementById('personinfo');
 form.addEventListener('submit', validateForm);
 let person = {};
+let selectedRow=null;
 function validateForm(event) {
     event.preventDefault();
+    if(selectedRow!=null) {
+        // alert("selected row");
+        rowEditSubmit();
+    }
     firstname = document.getElementById('firstname').value;
     lastname = document.getElementById('lastname').value;
     address = document.getElementById('address').value;
@@ -57,7 +62,10 @@ function validateForm(event) {
         person.lastname=lastname;
         person.gender=gender;
         person.address=address;
-        insertData(firstname,lastname,gender,address);
+        if(selectedRow==null){
+            insertData(firstname,lastname,gender,address);
+        }
+
       }
 
   }
@@ -75,15 +83,60 @@ function insertData(firstname,lastname,gender,address){
     tableLastname.innerHTML=lastname;
     tableGender.innerHTML=gender;
     tableAddress.innerHTML=address;
-    tableEdit.innerHTML='<a onClick="rowEdit(this)">Edit</a>';
-    tableDelete.innerHTML='<a onClick="rowDelete(this)">Delete</a>';
+    tableEdit.innerHTML='<button onClick="rowEdit(this)">Edit</button>';
+    tableDelete.innerHTML='<button onClick="rowDelete(this)">Delete</button>';
+    clearForm();
+
+}
+
+function clearForm() {
+    document.getElementById('firstname').value="";
+    document.getElementById('lastname').value="";
+    document.getElementById('address').value="";
+    document.getElementById('male').checked="";
+    document.getElementById('female').checked="";
+    document.getElementById('terms').checked="";
+}
+
+function rowEdit(cell) {
+    selectedRow = cell.parentElement.parentElement;
+    document.getElementById("firstname").value = selectedRow.cells[0].innerHTML;
+    document.getElementById("lastname").value = selectedRow.cells[1].innerHTML;
+    document.getElementById("address").value = selectedRow.cells[3].innerHTML;    
+    if(selectedRow.cells[2]==='Male'){
+        document.getElementById("male").value = checked;
+    }
+    else if(selectedRow.cells[2]==='Female')
+    {
+        document.getElementById("female").value = checked;
+    }
 
 }
 
 
+function rowEditSubmit() {
+    selectedRow.cells[0].innerHTML = document.getElementById("firstname").value ;
+    selectedRow.cells[1].innerHTML = document.getElementById("lastname").value;
+    if(selectedRow.cells[2]==='Male'){
+        selectedRow.cells[2].innerHTML = document.getElementById("male").value;
+    }
+    else if(selectedRow.cells[2]==='Female')
+    {
+        selectedRow.cells[2].innerHTML = document.getElementById("female").value = checked;
+    }
+    selectedRow.cells[3].innerHTML = document.getElementById("address").value ;
+}
 // let table1= document.getElementByTagName(table)[0];
 // table1.insertRow
 
+function rowDelete(cell) {
+    // selectedRow = cell.parentElement.parentElement;
+    if (confirm('Delete this person')) {
+        row = cell.parentElement.parentElement;
+        document.getElementById("tbody").deleteRow(cell.rowIndex);
+        clearForm();
+    }
+}
 
 
 
