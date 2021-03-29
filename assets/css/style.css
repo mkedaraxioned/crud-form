@@ -122,17 +122,19 @@ li {
 
 form {
   padding: 100px 20%;
-  border: 2px solid black;
+  border: 2px solid #000;
 
 }
 
-table , th , td {
-  border: 2px solid black;
+ul {
+  border: 1px solid #000;
   border-collapse: collapse;
 }
 
-th , td {
+li {
   padding: 10px 20px;
+  border-right: 1px solid #000;
+  width: 100px;
 }
 
 form > div {
@@ -143,7 +145,10 @@ th {
   font-weight: bold;
 }
 
-
+.firstname-error ,
+.lastname-error {
+  display: none;
+}
 
 /*=================================
   main styling ends here
