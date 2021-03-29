@@ -58,64 +58,61 @@
           <form name="personinfo" id="personinfo">
           <div>
             <label for="firstname">First Name:</label>
-            <input type="text" name="firstname" id="firstname">
+            <input type="text" name="firstname" id="firstname" class="firstname form-ip">
             <span class="firstname-error">Firstname error here</span>
           </div>
           <div>
             <label for="lastname">Last Name:</label>
-            <input type="text" name="lastname" id="lastname">
+            <input type="text" name="lastname" id="lastname" class="lastname form-ip">
             <span class="lastname-error">Lastname error here</span>
           </div>
           <div>
             <label for="gender">Gender:</label>
-            <input type="radio" name="gender" id="male" value="Male">
+            <input type="radio" name="gender" id="male" value="Male" class="male form-ip">
             <label for="male">Male</label>
-            <input type="radio" name="gender" id="female" value="Female">
+            <input type="radio" name="gender" id="female" value="Female" class="female form-ip">
             <label for="female">Female</label>
 
           </div>
           <div>
             <label for="address">Address</label>
-            <textarea name="address" id="address" name="address" cols="30" rows="10"></textarea>
+            <textarea name="address" id="address" name="address" cols="30" rows="10" class="address form-ip"></textarea>
           </div>
           <div>
-            <input type="checkbox" name="terms" id="terms">
+            <input type="checkbox" name="terms" id="terms" class="terms form-ip">
             <label for="terms">Terms and Conditions</label>
           </div>
           <div>
-            <input type="submit" value="Submit" name="submit">
-            <input type="button" value="Cancel" id="resetbtn" name="resetbtn">
+            <input type="submit" value="Submit" name="submit" class="submit">
+            <input type="button" value="Cancel" id="resetbtn" name="resetbtn" class="resetbtn">
           </div>
         </form>
 
         <div>
-          <table>
-            <thead>
-              <tr>
-                <th>
-                  Name
-                </th>
-                <th>
-                  Last Name
-                </th>
-                <th>
-                  Gender
-                </th>
-                <th>
-                  Address
-                </th>
-                <th>
-                  Edit
-                </th>
-                <th>
-                  Delete
-                </th>
-              </tr>
-            </thead>
-            <tbody id="tbody">
+          <ul>
+            <li>
+              <span>Name</span>
+            </li>
+            <li>
+              <span>Last Name</span>
+            </li>
+            <li>
+              <span>Gender</span>
+            </li>
+            <li>
+              <span>Address</span>
+            </li>
+            <li>
+              <span>Edit</span>
+            </li>
+            <li>
+              <span>Delete</span>
+            </li>
+          </ul>  
+          <div class="personlist">
 
-            </tbody>
-          </table>
+          </div>
+         
         </div>
 
         </div>
